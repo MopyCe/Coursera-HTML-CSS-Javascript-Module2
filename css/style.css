@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "BalsamiqSans-Regular";
+    src: url(./fonts/BalsamiqSans-Regular.ttf) format("truetype");
+  }
+
+* {
+    display: block;
+    box-sizing: border-box;
+    font-family:'BalsamiqSans-Regular','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+  }
+
+title {
+    display: none;
+}
+
+body {
+    background-color: white;
+}
+
+h1 {
+    font-size: 175%; 
+    text-align: center;
+}
+
+.Row {
+    width: 100%; 
+    display: block;
+}
+
+section {        
+    margin : 0px;    
+    position : relative;
+    float: left;    
+}
+
+.MenuItem 
+{  
+    background-color: darkgray;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    margin : 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.MenuItemTitle {
+    position: relative;
+    float: right;
+    font-size: 125%;
+    margin: 0px;
+    border-width: 0px;
+    border-bottom: 1px;
+    border-left: 1px;    
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;    
+}
+
+/*The sections share the available width. I need to set a height to align all the boxes.
+/*On the mockup the text is hidden if there is not enough space.*/
+.MenuItemContent {
+    padding-top: 5px;
+    margin: 5px;
+    clear: both;   
+    height:194px;
+    overflow : hidden;
+}
+
+#S1 .MenuItemTitle {
+    background-color: rosybrown;    
+}
+
+#S2 .MenuItemTitle {
+    background-color: indianred;
+    color: white;
+}
+
+#S3 .MenuItemTitle {
+    background-color: khaki;
+}
+
+/********* Responsive part **************/
+/********** Desktop **********/
+@media (min-width: 992px) 
+{
+    section {
+        width: 33.33%; 
+    }
+}
+
+/********** Tablet **********/
+@media (min-width: 768px) and (max-width: 991px) 
+{
+    section {
+        width: 50%; 
+    }
+
+    #S3 {
+        width: 100%; 
+    }
+
+    /*This section only use all the width. Nothing to align on the left and on the right. The box content height can be auto.*/
+    #S3 .MenuItemContent
+    { 
+        height: auto;
+    }
+}
+
+/********** Mobile **********/
+@media (max-width: 767px) 
+{
+    /*On the mobile version there is more space on the left and on the right of the screen.*/
+    .Row {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section {
+        width: 100%; 
+    }
+
+    /*All sections used all the width. Nothing to align on the left and on the right. The box content height can be auto.*/
+    .MenuItemContent {
+        height: auto;
+    }
+}
